@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>画中有话</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src='md5.min.js'></script>
+  <script src='https://cdn.staticfile.org/sjcl/1.0.8/sjcl.min.js'></script>
+<!-- script src='cookie.js'></script-->  
+<script src='c.js'></script>
+  
+  <!-- script src='create.js'></script -->
+  <script src='main.js'></script>
+</head>
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="page-header">
+				<h1>
+					画中有话 <small>基于LSB的图片隐写术的H5实现</small>
+				</h1>
+			</div>
+			<div class="alert alert-info alert-dismissable">
+				 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				所有运算均在浏览器端进行，不涉及服务器，请放心使用。<a href="https://github.com/sgsq/wip" class="alert-link">查看源码</a>
+			</div>
+                        <p>
+<em>在像素中隐藏文本</em>
+			</p>
+			<form role="form">
+				<div class="form-group">
+					 <label for="rawimg">选择图片</label><input type="file" id="rawimg" accept="image/*" onchange="rimg()" />
+
+					<p class="help-block">
+						请尽量使用细节丰富的图片。丰富的细节可以掩盖数据流。
+					</p>
+				</div>
+                                <div id="rimg"></div>
+
+				<div class="form-group">
+					 <label for="message">文本</label><textarea id="message" class="form-control" rows="3"></textarea>
+				</div>
+				<div class="form-group">
+					 <label for="password">密码（可选）</label><input type="password" class="form-control" id="password" />
+				</div>
+			</form>
+<button type="button" class="btn btn-default" onclick="encode()">隐写</button>
+
+			<p>
+			本工具可以在任意图片中隐写任意文本。隐写后的图片与原图相比，没有肉眼可见的区别。<a href="show.html" class="alert-link">在线提取器</a>
+			</p>
+			<div class="alert alert-warning alert-dismissable">
+				 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				<h4>
+					注意!
+				</h4> 请以<strong>原图</strong> 形式发送给接收者。任何对图片的压缩会导致数据损失。您也可以使用<a href="https://sm.ms" class="alert-link">sm.ms</a>图床。<br />
+                                如要发送敏感数据，请使用密码。<br />下方是输出图片，请及时保存。
+			</div>
+<div id='err'></div>
+<canvas id='canvas' style="display:none"></canvas>
+<img alt="图片输出" width="80%" id='output' /> 
+                     
+
+
+			<p><br>
+此页面已被 <span id='uv'>正在加载</span> 人访问 <span id='pv'>正在加载</span> 次, 生成了 <span id='ic'>正在加载</span> 张图片.<br>
+ <a href="https://sqhs.club"><strong>拾泉画室 </strong></a> 出品 <a href="https://sqhs.club">https://sqhs.club</a>
+			</p>
+
+
+<script>$("#rawimg").val("");</script>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

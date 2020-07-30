@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>画中有话</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src='md5.min.js'></script>
+  <script src='https://cdn.staticfile.org/sjcl/1.0.8/sjcl.min.js'></script>
+  <!-- script src='cookie.js'></script -->
+  <script src='c.js'></script>
+  <!-- script src='create.js'></script -->
+  <script src='main.js'></script>
+</head>
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="page-header">
+				<h1>
+					画中有话 <small>基于LSB的图片隐写术的H5实现</small>
+				</h1>
+			</div>
+			<div class="alert alert-success alert-dismissable">
+				 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				<h4>
+					你好!
+				</h4> <strong>你刚刚收到了一张隐写过的图片 </strong> 图片隐写术，在图片中隐藏数据。
+			</div>
+			<div class="alert alert-dismissable alert-info">
+				 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				所有运算均在浏览器端进行，不涉及服务器，请放心使用。<a href="https://github.com/sgsq/wip" class="alert-link">查看源码</a>
+			</div>
+			<form role="form">
+				<div class="form-group">
+					 <label for="shimg">图片</label><input type="file" id="shimg" onchange="simg()" />
+					<p class="help-block">
+						请选择隐写过的图片。我们将会为你提取文本。
+					</p>
+<div id="ssimg"></div>
+				</div>
+
+				<div class="form-group">
+					 <label for="password2">密码(如果有)</label><input type="password" class="form-control" id="password2" />
+				</div>
+
+				<div class="checkbox">
+<p class="help-block">
+						我们只提供提取工具，无法控制经由本服务传送之内容，也无法对用户的使用行为进行全面控制，因此不能保证内容的合法性、正确性、完整性、真实性或品质；用户已预知使用本服务时，可能会接触到令人不快、不适当等内容，并同意将自行加以判断并承担所有风险，而不依赖于我们的服务。 
+					</p>
+					 <label><input type="checkbox" id="agreeTOS" />我知晓并同意</label>
+				</div> 
+			</form>
+
+<button class="btn btn-default" onclick="decode()">提取</button>
+<br />
+<div id="err"></div><canvas id='canvas' style="display:none"></canvas>
+			<div id='messageDecoded'>
+
+			<div class="alert alert-dismissable alert-info">
+				 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				这里将显示提取结果。
+			</div>
+
+			</div>
+			<p><br>
+此页面已被 <span id='uv'>正在加载</span> 人访问 <span id='pv'>正在加载</span> 次, 生成了 <span id='ic'>正在加载</span> 张图片.<br>
+ <a href="https://sqhs.club"><strong>拾泉画室 </strong></a> 出品 <a href="https://sqhs.club" >https://sqhs.club</a> <a href="create.html">我也要制作隐写图片</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+</body></html>
